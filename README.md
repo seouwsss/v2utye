@@ -10,15 +10,15 @@
 
 请求`/`，返回3D元素周期表
 
-![image](https://cdn.jsdelivr.net/gh/libsgh/v2ray-heroku@main/doc/1.png)
+![image](https://github.com/feixiangii/v2ray-heroku-Web/blob/main/doc/1.png)
 
 请求`/speedtest/`，html5-speedtest测速页面
 
-![image](https://cdn.jsdelivr.net/gh/libsgh/v2ray-heroku@main/doc/2.png)
+![image](https://github.com/feixiangii/v2ray-heroku-Web/blob/main/doc/2.png)
 
 请求`/test/`，文件下载速度测试
 
-![image](https://cdn.jsdelivr.net/gh/libsgh/v2ray-heroku@main/doc/3.png)
+![image](https://github.com/feixiangii/v2ray-heroku-Web/blob/main/doc/3.png)
 
 请求`/ray`（可配置）v2ray websocket路径
 
