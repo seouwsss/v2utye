@@ -7,7 +7,7 @@
   "env": {
     "PROTOCOL": {
       "description": "协议vmess或vless",
-      "value": "vmess",
+      "value": "vless",
       "required": true
     },
     "UUID": {
@@ -21,8 +21,8 @@
       "required": true
     }
   },
-  "website": "https://github.com/feixiangii/Xray-heroku",
-  "repository": "https://github.com/feixiangii/Xray-heroku",
+  "website": "https://github.com/feixiangii/Xray-Heroku-Web",
+  "repository": "https://github.com/feixiangii/Xray-Heroku-Web",
   "stack": "container",
   "features": [
     "runtime-dyno-metadata"
