@@ -3,16 +3,20 @@
 # Download and install XRay
 config_path=$PROTOCOL"_ws_tls.json"
 mkdir /tmp/Xray
-curl -L -H "Cache-Control: no-cache" -o /tmp/Xray/Xray.zip https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip
-unzip /tmp/Xray/Xray.zip -d /tmp/Xray
-install -m 755 /tmp/Xray/Xray /usr/local/bin/Xray
-install -m 755 /tmp/xray/geosite.dat /usr/local/bin/geosite.dat
-install -m 755 /tmp/xray/geoip.dat /usr/local/bin/geoip.dat
+#curl -L -H "Cache-Control: no-cache" -o /tmp/Xray/Xray.zip https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip
+
+curl --retry 10 --retry-max-time 60 -L -H "Cache-Control: no-cache" -fsSL github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip -o /tmp/xray/xray.zip
+
+busybox unzip /tmp/Xray/Xray.zip -d /tmp/Xray
+install -m 755 /tmp/Xray/xray /usr/local/bin/xray
+install -m 755 /tmp/Xray/geosite.dat /usr/local/bin/geosite.dat
+install -m 755 /tmp/Xray/geoip.dat /usr/local/bin/geoip.dat
 xray -version
 # Remove temporary directory
 rm -rf /tmp/Xray
+
 # XRay new configuration
-install -d /usr/local/etc/Xray
+install -d /usr/local/etc/xray
 envsubst '\$UUID,\$WS_PATH' < $config_path > /usr/local/etc/Xray/config.json
 # MK TEST FILES
 mkdir /opt/test
