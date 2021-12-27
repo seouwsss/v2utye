@@ -1,8 +1,8 @@
 {
-  "name": "v2ray-heroku",
+  "name": "Xray-heroku",
   "description": "deploy VV to Heroku.",
   "keywords": [
-    "v2ray"
+    "Xray"
   ],
   "env": {
     "PROTOCOL": {
@@ -21,8 +21,8 @@
       "required": true
     }
   },
-  "website": "https://github.com/libsgh/v2ray-heroku",
-  "repository": "https://github.com/libsgh/v2ray-heroku",
+  "website": "https://github.com/feixiangii/Xray-heroku",
+  "repository": "https://github.com/feixiangii/Xray-heroku",
   "stack": "container",
   "features": [
     "runtime-dyno-metadata"
