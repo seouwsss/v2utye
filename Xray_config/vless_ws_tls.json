@@ -11,7 +11,7 @@
                     {
                         "id": "$UUID",
                         "level": 0,
-                        "email": "feixiangii683@gmail.com"
+                        "email": "feixiangii683@gamil.com"
                     }
                 ],
                 "decryption": "none"
@@ -23,8 +23,8 @@
                   "path": "$WS_PATH"
                 }
             }
-        },
-    ]
+        }
+    ],
     "routing": {
         "domainStrategy": "IPIfNonMatch",
         "domainMatcher": "mph",
