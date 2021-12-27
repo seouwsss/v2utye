@@ -27,7 +27,7 @@
 
 |  名称 | 值  | 说明  |
 | ------------ | ------------ | ------------ |
-|  PROTOCOL |  vmess<br>vless |  协议：nginx+vmess+ws+tls或是nginx+vless+ws+tls |
+|  PROTOCOL |  vless<br>vmess (可选) |  协议：nginx+vmess+ws+tls或是nginx+vless+ws+tls |
 |  UUID |  [uuid在线生成器](https://www.uuidgenerator.net "uuid在线生成器") | 用户主ID  |
 |  WS_PATH | 默认为`/ray` |  路径，请勿使用`/speedtest`，`/`，`/test` 等已经被占用的请求路径 |
 
