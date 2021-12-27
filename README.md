@@ -2,7 +2,7 @@
 [![](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/feixiangii/Xray-Heroku-Web.git)
 
 ### heroku上部署Xray
-- [x] 支持vmess和vless两种协议
+- [x] 支持vless和vmess两种协议
 - [x] 支持自定义websocket路径
 - [x] 伪装首页（3D元素周期表）
 - [x] HTML5测速
@@ -27,7 +27,7 @@
 
 |  名称 | 值  | 说明  |
 | ------------ | ------------ | ------------ |
-|  PROTOCOL |  vless<br>vmess (可选) |  协议：nginx+vmess+ws+tls或是nginx+vless+ws+tls |
+|  PROTOCOL |  vless<br>vmess (可选) |  协议：nginx+vless+ws+tls或是nginx+vmess+ws+tls |
 |  UUID |  [uuid在线生成器](https://www.uuidgenerator.net "uuid在线生成器") | 用户主ID  |
 |  WS_PATH | 默认为`/ray` |  路径，请勿使用`/speedtest`，`/`，`/test` 等已经被占用的请求路径 |
 
