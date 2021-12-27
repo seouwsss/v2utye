@@ -1,5 +1,5 @@
 ## Xray-heroku
-[![](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/feixiangii/Xray-heroku-Web.git)
+[![](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/feixiangii/Xray-Heroku-Web.git)
 
 ### heroku上部署Xray
 - [x] 支持vmess和vless两种协议
