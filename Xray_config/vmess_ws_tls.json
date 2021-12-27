@@ -1,28 +1,54 @@
 {
-  "inbounds": [
-    {
-      "port": 23323,
-      "protocol": "vmess",
-      "settings": {
-        "clients": [
-          {
-            "id": "$UUID",
-            "alterId": 64
-          }
-        ],
-        "disableInsecureEncryption": true
-      },
-      "streamSettings": {
-        "network": "ws",
-        "wsSettings": {
-          "path": "$WS_PATH"
+    "log": {
+        "loglevel": "none"
+    },
+    "inbounds": [
+        {
+            "port": 23323,
+            "protocol": "vmess",
+            "settings": {
+                "clients": [
+                    {
+                        "id": "$UUID",
+                        "level": 0,
+                        "email": "feixiangii683@gamil.com"
+                    }
+                ],
+                "decryption": "none"
+            },
+            "streamSettings": {
+                "network": "ws",
+                "allowInsecure": false,
+                "wsSettings": {
+                  "path": "$WS_PATH"
+                }
+            }
         }
-      }
-    }
-  ],
-  "outbounds": [
-    {
-      "protocol": "freedom"
-    }
-  ]
+    ],
+    "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "domainMatcher": "mph",
+        "rules": [
+           {
+              "type": "field",
+              "protocol": [
+                 "bittorrent"
+              ],
+              "domains": [
+                  "geosite:cn",
+                  "geosite:category-ads-all"
+              ],
+              "outboundTag": "blocked"
+           }
+        ]
+    },
+    "outbounds": [
+        {
+            "protocol": "freedom"
+        },
+        {
+            "protocol": "blackhole",
+            "tag": "blocked"
+        }
+    ]
 }
