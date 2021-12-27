@@ -1,30 +1,54 @@
 {
-  "log" : {
-    "loglevel": "warning"
-  },
-  "inbound": {
-    "port": 23323
-    "listen":"127.0.0.1",
-    "protocol": "vless",
-    "settings": {
-      "clients": [
-         {
-          "id": "$UUID",
-          "level": 0,
-          "email": "feixiangii683@gmail.com"
-         }
-       ],
-       "decryption": "none"
+    "log": {
+        "loglevel": "none"
     },
-    "streamSettings": {
-      "network": "ws",
-      "wsSettings": {
-        "path": "$WS_PATH"
-       }
-    }
-  },
-  "outbound": {
-    "protocol": "freedom",
-    "settings": {}
-  }
+    "inbounds": [
+        {
+            "port": 23323,
+            "protocol": "vless",
+            "settings": {
+                "clients": [
+                    {
+                        "id": "$UUID",
+                        "level": 0,
+                        "email": "feixiangii683@gmail.com"
+                    }
+                ],
+                "decryption": "none"
+            },
+            "streamSettings": {
+                "network": "ws",
+                "allowInsecure": false,
+                "wsSettings": {
+                  "path": "$WS_PATH"
+                }
+            }
+        },
+    ],
+    "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "domainMatcher": "mph",
+        "rules": [
+           {
+              "type": "field",
+              "protocol": [
+                 "bittorrent"
+              ],
+              "domains": [
+                  "geosite:cn",
+                  "geosite:category-ads-all"
+              ],
+              "outboundTag": "blocked"
+           }
+        ]
+    },
+    "outbounds": [
+        {
+            "protocol": "freedom"
+        },
+        {
+            "protocol": "blackhole",
+            "tag": "blocked"
+        }
+    ]
 }
