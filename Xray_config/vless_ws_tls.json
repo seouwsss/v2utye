@@ -24,7 +24,7 @@
                 }
             }
         },
-    ],
+    ]
     "routing": {
         "domainStrategy": "IPIfNonMatch",
         "domainMatcher": "mph",
