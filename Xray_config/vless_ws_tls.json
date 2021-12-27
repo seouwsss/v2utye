@@ -1,27 +1,30 @@
 {
-  "inbounds": [
-    {
-      "port": 23323,
-      "protocol": "vless",
-      "settings": {
-        "clients": [
-          {
-            "id": "$UUID"
-          }
-        ],
-        "decryption": "none"
-      },
-      "streamSettings": {
-        "network": "ws",
-        "wsSettings": {
-          "path": "$WS_PATH"
-        }
-      }
+  "log" : {
+    "loglevel": "warning"
+  },
+  "inbound": {
+    "port": 23323
+    "listen":"127.0.0.1",
+    "protocol": "vless",
+    "settings": {
+      "clients": [
+         {
+          "id": "$UUID",
+          "level": 0,
+          "email": "feixiangii683@gmail.com"
+         }
+       ],
+       "decryption": "none"
+    },
+    "streamSettings": {
+      "network": "ws",
+      "wsSettings": {
+        "path": "$WS_PATH"
+       }
     }
-  ],
-  "outbounds": [
-    {
-      "protocol": "freedom"
-    }
-  ]
+  },
+  "outbound": {
+    "protocol": "freedom",
+    "settings": {}
+  }
 }
